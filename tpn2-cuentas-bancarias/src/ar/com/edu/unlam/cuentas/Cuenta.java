@@ -2,28 +2,29 @@ package ar.com.edu.unlam.cuentas;
 
 public class Cuenta {
 	
-	private Double dinero;
+	private Double dineroDisponible;
 	
 	public Cuenta(Double dinero){
-		setDinero(dinero);	
+		setDineroDisponible(dinero);	
 	}
 	
-	public Double getDinero(){
-		return dinero;
+	public Double getDineroDisponible(){
+		return dineroDisponible;
 	}
 	 
-	public void setDinero(Double dinero){
-		this.dinero=dinero;
+	public void setDineroDisponible(Double dinero){
+		this.dineroDisponible=dinero;
+		
 	}
 	
 	public void extraer(Double extraerDinero){
-		extraerDinero = dinero - extraerDinero;
-		setDinero(extraerDinero);
+		extraerDinero = dineroDisponible - extraerDinero;
+		setDineroDisponible(extraerDinero);
 	}
 	
 	public void depositar (Double depositarDinero){
 		if(depositarDinero>0){
-			this.dinero += depositarDinero;
+			this.dineroDisponible += depositarDinero;
 		}
 	}
 }

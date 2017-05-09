@@ -2,7 +2,7 @@ package ar.com.edu.unlam.cuentas;
 
 public class CajaDeAhorros extends Cuenta{
 	
-	private Integer cantidadDeExtracciones;
+	private int cantidadDeExtracciones = 0;
 	private final Double COSTO_ADICIONAL = 6.0;
 	
 	public CajaDeAhorros(Double dinero) {
@@ -10,13 +10,19 @@ public class CajaDeAhorros extends Cuenta{
 	}
 	
 	public void extraccionDeCajaDeAhorros(Double montoAExtraer){
-		this.cantidadDeExtracciones++;
-		
-		if(this.cantidadDeExtracciones > 5){
-			this.extraer(montoAExtraer += this.COSTO_ADICIONAL);
+		cantidadDeExtracciones = cantidadDeExtracciones + 1;
+		this.extraer(montoAExtraer);
+		if(getCantidadExtracciones() >=5){
+			this.setDineroDisponible(this.getDineroDisponible() - COSTO_ADICIONAL);
+			cantidadExtraccionesDefault();
 		}
 	}
 	
+	private int getCantidadExtracciones(){
+		return cantidadDeExtracciones;
+	}
 	
-	
+	private void cantidadExtraccionesDefault(){
+		cantidadDeExtracciones = 0;
+	}
 }
