@@ -14,7 +14,6 @@ public class Cuenta {
 	 
 	public void setDineroDisponible(Double dinero){
 		this.dineroDisponible=dinero;
-		
 	}
 	
 	public void extraer(Double extraerDinero){
